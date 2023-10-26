@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>dron-express</title>
+    <link rel="stylesheet" href="front.css" />
+</head>
+<body>
+  <h1>Dron-Delivery</h1>
+
+  <form>
+    <label for="address">Адрес доставки:</label>
+    <input type="text" id="address" name="address" placeholder="Введите адрес">
+
+    <br><br>
+
+    <label for="fullName">ФИО получателя:</label>
+    <input type="text" id="fullName" name="fullName" placeholder="Введите ФИО">
+
+    <br><br>
+
+    <label for="phone">Телефон получателя:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона">
+
+    <br><br>
+
+    <label for="deliveryTime">Время доставки:</label>
+    <select id="deliveryTime" name="deliveryTime">
+      <option value="nearest">Ближайшее время</option>
+      <option value="00:00">00:00</option>
+      <option value="00:15">00:15</option>
+      <option value="00:30">00:30</option>
+      <option value="00:45">00:45</option>
+      <option value="01:00">01:00</option>
+      <!-- Здесь перечислите остальные возможные временные интервалы с шагом в 15 минут -->
+    </select>
+
+    <br><br>
+
+    <button type="submit">Оплата</button>
+  </form>
+
+  <!-- Включите скрипт для работы с яндекс картами -->
+</body>
+</html>

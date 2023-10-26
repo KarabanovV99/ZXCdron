@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Drone, Places
 
-# Register your models here.
+
+

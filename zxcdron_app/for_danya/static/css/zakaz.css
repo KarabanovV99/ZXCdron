@@ -7,7 +7,7 @@ body {
 	min-width: 320px;
 	overflow-x: hidden;
 	height: auto;
-    background-image: url("logo_big1.png");
+    background-image: url("/static/img/logo_big1.png");
     background-repeat: no-repeat;
     background-size: cover;
 }

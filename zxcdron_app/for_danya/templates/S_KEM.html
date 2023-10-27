@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
+	<title>HTML & CSS практика от AVIS TV</title>
 
 	<!-- Bootstrap reboot (для сброса стилей) -->
 	<link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
@@ -17,27 +17,27 @@
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 	<!-- Стили сайта -->
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="S_KEM.css">
 
 	<!-- Логотип вкладки -->
-	<link rel="icon" href="{% static 'img/test_logo1.jpg' %}" type="image/x-icon">
+	<link rel="icon" href="test_logo1.jpg" type="image/x-icon">
 </head>
 <body>
 	<header>
 	<!-- МЕНЮ САЙТА -->
 	<nav class="navbar">
 		<div class="container">
-			<a href="#" class="navbar-brand"> Drone-Delivery </a>
+			<a href="Main1.html" class="navbar-brand"> Drone-Delivery </a>
 
 			<div class="navbar-wrap">
 				<ul class="navbar-menu">
-					<li><a href="{% url 'zakaz' %}">Заказать товар</a></li>
-					<li><a href="{% url 's_kem' %}">С кем мы сотрудничаем</a></li>
-					<li><a href="{% url 'o_nas' %}">О нашем проекте</a></li>
-					<li><a href="">Поддержка</a></li>
+					<li><a href="zakaz.html">Заказать товар</a></li>
+					<li><a href="S_KEM.html">С кем мы сотрудничаем</a></li>
+					<li><a href="O_NAS.html">О нашем проекте</a></li>
+					<li><a href="#">Поддержка</a></li>
 				</ul>
 			<!-- /.navbar-menu -->
-				<a href="" class="callback">Мои заказы</a>
+				<a href="#" class="callback">Мои заказы</a>
 			</div>
 		</div>
 	</nav>

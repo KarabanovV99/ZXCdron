@@ -37,6 +37,7 @@ class Drone(models.Model):
 
 class Places(models.Model):
     place_id = models.CharField(max_length=100)
+    place_address = models.CharField(max_length=200, default='test')
     number_of_drones = models.IntegerField()
     all_drones_id = models.ManyToManyField(Drone)
 
@@ -45,11 +46,12 @@ class Places(models.Model):
 
 
 class Order(models.Model):
-    order_id = models.CharField(max_length=100, default='test')
+    place_id = models.CharField(max_length=5, default='test')
     receiver_name = models.CharField(max_length=50)
     address = models.CharField(max_length=200)
     phone = models.CharField(max_length=20)
+    used_places = models.ForeignKey(Places, on_delete=models.PROTECT, default='1')
     # date_and_time = models.DateTimeField()
 
-    def __str__(self):
-        return self.order_id
+
+

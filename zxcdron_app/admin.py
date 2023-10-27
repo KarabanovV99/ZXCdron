@@ -11,10 +11,14 @@ class DroneAdmin(admin.ModelAdmin):
 
 @admin.register(Places)
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ['place_id', 'number_of_drones']
+    list_display = ['place_id', 'place_address', 'number_of_drones']
     filter_horizontal = ['all_drones_id']
 
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['order_id', 'receiver_name', 'address']
+    list_display = ['id', 'receiver_name', 'address', 'used_places']
+
+
+
+

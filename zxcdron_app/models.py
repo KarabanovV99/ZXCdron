@@ -1,11 +1,35 @@
 from django.db import models
 
 
+class State(models.TextChoices):
+    BUSY = 'Занят'
+    FREE = 'Свободен'
+
+
 class Drone(models.Model):
-    drone_id = models.CharField(max_length=100)
-    drone_is_free = models.BooleanField()
-    power = models.FloatField()
-    weight = models.CharField(max_length=100)
+    SMALL = 'small'
+    MEDIUM = 'medium'
+    LARGE = 'large'
+
+    DRONE_TYPE = (
+        (SMALL, 'Small'),
+        (MEDIUM, 'Medium'),
+        (LARGE, 'Large')
+    )
+
+    drone_id = models.CharField(max_length=30)
+    drone_type = models.CharField(
+        max_length=7,
+        choices=DRONE_TYPE,
+        default=MEDIUM
+    )
+    drone_is_free = models.CharField(
+        max_length=9,
+        choices=State.choices,
+        default=State.FREE
+    )
+    power = models.CharField(max_length=4)
+    weight = models.CharField(max_length=30)
 
     def __str__(self):
         return self.drone_id
@@ -14,9 +38,18 @@ class Drone(models.Model):
 class Places(models.Model):
     place_id = models.CharField(max_length=100)
     number_of_drones = models.IntegerField()
-    number_of_free_drones = models.IntegerField()
+    all_drones_id = models.ManyToManyField(Drone)
 
     def __str__(self):
         return self.place_id
 
 
+class Order(models.Model):
+    order_id = models.CharField(max_length=100, default='test')
+    receiver_name = models.CharField(max_length=50)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=20)
+    # date_and_time = models.DateTimeField()
+
+    def __str__(self):
+        return self.order_id

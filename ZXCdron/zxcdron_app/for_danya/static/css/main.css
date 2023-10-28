@@ -1,0 +1,94 @@
+body {
+	position: relative;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #000;
+	min-width: 320px;
+	overflow-x: hidden;
+	height: auto;
+    background-image: url("logo_big1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.navbar .container {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.navbar-menu li {
+    display: inline-block;
+
+}
+.navbar-menu li a {
+    display: inline-block;
+    color: #000;
+    opacity: 0.6;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.navbar-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.callback {
+    margin-right: 10px;
+    margin-left: 30px;
+    padding: 15px 15px;
+    border-radius: 100px;
+    background: linear-gradient(to right, #f89a0e, #f5b92c);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    color: rgba(0,0,0,.6);
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(255,53,0,.2);
+    transition: all 0.4s ease-out;
+}
+.callback:hover {
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 9px 9px rgba(255,53,0,.6);
+}
+.navbar-brand {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, #fc3500, #fc9c1f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-menu li a:hover {
+    opacity: 1;
+    background: linear-gradient(to right, #fc3500, #fc9c1f);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.navbar-brand:hover {
+    color: #FF3500;
+}

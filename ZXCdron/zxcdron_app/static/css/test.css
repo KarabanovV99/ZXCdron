@@ -1,0 +1,53 @@
+.orange-button {
+  background-color: #FFA500;
+  color: #FFF;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* При наведении на кнопку изменяем ее цвет и добавляем тень */
+.orange-button:hover {
+  background-color: #FF8C00;
+  box-shadow: 0px 0px 5px #888;
+}
+
+/* При нажатии на кнопку уменьшаем ее размер и добавляем тень */
+.orange-button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 0px 5px #555;
+}
+
+/* Стили для формы */
+.form {
+  width: 400px;
+}
+
+/* Стили для заголовка */
+.title {
+  text-align: center;
+}
+
+/* Стили для полей ввода */
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #CCC;
+}
+
+/* Стили для селекта */
+.select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Стили для меток */
+.label {
+  display: block;
+  margin-bottom: 5px;
+}

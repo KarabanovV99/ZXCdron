@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML & CSS практика от AVIS TV</title>
+
+	<!-- Bootstrap reboot (для сброса стилей) -->
+	<link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
+
+	<!-- Bootstrap сетка -->
+	<link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+	<!-- Шрифты с Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+	<!-- Стили сайта -->
+	<link rel="stylesheet" href="{% static 'css/zakaz.css' %}">
+<!--	<link rel="stylesheet" href="{% static 'css/test.css' %}">-->
+
+	<!-- Логотип вкладки -->
+	<link rel="icon" href="{% static 'img/test_logo1.jpg' %}" type="image/x-icon">
+</head>
+<body>
+	<header>
+	<!-- МЕНЮ САЙТА -->
+	<nav class="navbar">
+		<div class="container">
+			<a href="Main1.html" class="navbar-brand"> Drone-Delivery </a>
+
+			<div class="navbar-wrap">
+				<ul class="navbar-menu">
+					<li><a href="zakaz.html">Заказать товар</a></li>
+					<li><a href="S_KEM.html">С кем мы сотрудничаем</a></li>
+					<li><a href="O_NAS.html">О нашем проекте</a></li>
+					<li><a href="#">Поддержка</a></li>
+				</ul>
+			<!-- /.navbar-menu -->
+				<a href="#" class="callback">Мои заказы</a>
+			</div>
+		</div>
+	</nav>
+	<!-- СОДЕРЖИМОЕ САЙТА -->
+</header>
+<form method="post">
+	{% csrf_token %}
+    <label for="address">Адрес доставки:</label>
+    <input class="input" type="text" id="address" name="address" placeholder="Введите адрес">
+
+    <br><br>
+
+    <label for="fullName">ФИО получателя:</label>
+    <input class="input" type="text" id="fullName" name="fullName" placeholder="Введите ФИО">
+
+    <br><br>
+
+    <label for="phone">Телефон получателя:</label>
+    <input class="input" type="tel" id="phone" name="phone" placeholder="Введите номер телефона">
+
+    <br><br>
+
+    <label for="deliveryTime">Время доставки:</label>
+    <select class="select" id="deliveryTime" name="deliveryTime">
+      <option value="nearest">Ближайшее время</option>
+      <option value="00:00">00:00</option>
+      <option value="00:15">00:15</option>
+      <option value="00:30">00:30</option>
+      <option value="00:45">00:45</option>
+      <option value="01:00">01:00</option>
+      <!-- Здесь перечислите остальные возможные временные интервалы с шагом в 15 минут -->
+    </select>
+
+    <br><br>
+
+    <button class="orange-button" type="submit">Оплата</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone-delivery</title>
+
+    <!-- Bootstrap reboot (для сброса стилей) -->
+    <link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap сетка -->
+    <link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+    <!-- Шрифты с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="{% static 'css/zakaz.css' %}">
+    <!--	<link rel="stylesheet" href="{% static 'css/test.css' %}">-->
+
+    <!-- Логотип вкладки -->
+    <link rel="icon" href="{% static 'img/test_logo1.jpg' %}" type="image/x-icon">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/marks.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/client_address.js' %}"></script>
+</head>
+<body>
+<header>
+    <!-- МЕНЮ САЙТА -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand"> Drone-Delivery </a>
+
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li><a href="{% url 'zakaz' %}">Заказать товар</a></li>
+                    <li><a href="{% url 's_kem' %}">С кем мы сотрудничаем</a></li>
+                    <li><a href="{% url 'o_nas' %}">О нашем проекте</a></li>
+                    <li><a href="{% url 'login' %}">Работник</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                </ul>
+                <!-- /.navbar-menu -->
+                <a href="#" class="callback">Мои заказы</a>
+            </div>
+        </div>
+    </nav>
+    <!-- СОДЕРЖИМОЕ САЙТА -->
+</header>
+<div class="container">
+    <div class="block">
+        <form method="post" action="{% url 'thanks' %}">
+            {% csrf_token %}
+            <label for="address">Адрес доставки:</label>
+            <input class="input" type="text" id="address" name="address" placeholder="">
+
+            <br><br>
+
+            <label for="full_name">ФИО получателя:</label>
+            <input class="input" type="text" id="full_name" name="full_name" placeholder="">
+
+            <br><br>
+
+            <label for="phone">Телефон получателя:</label>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="">
+
+            <br><br>
+
+            <label for="deliveryTime">Время доставки:</label>
+            <select class="select" id="deliveryTime" name="deliveryTime">
+                {% for date_time in date_time_list %}
+                <option value="{{ date_time }}">{{ date_time }}</option>
+                {% endfor %}
+            </select>
+
+            <br><br>
+
+            <button class='orange-button' type="submit" href="after_pay.html">Оплата</button>
+        </form>
+    </div>
+
+    <div class="block">
+        <div id="map"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Drone-Deliviry</title>
+
+	<!-- Bootstrap reboot (для сброса стилей) -->
+	<link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
+
+	<!-- Bootstrap сетка -->
+	<link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+	<!-- Шрифты с Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+	<!-- Стили сайта -->
+	<link rel="stylesheet" href="{% static 'css/after_pay.css' %}">
+
+	<!-- Логотип вкладки -->
+	<link rel="icon" href="{% static 'img/test_logo1.jpg' %}" type="img/image/x-icon">
+</head>
+<body>
+	<header>
+	<!-- МЕНЮ САЙТА -->
+	<nav class="navbar">
+		<div class="container">
+			<a href="{% url 'home' %}" class="navbar-brand"> Drone-Delivery </a>
+
+			<div class="navbar-wrap">
+				<ul class="navbar-menu">
+					<li><a href="{% url 'zakaz' %}">Заказать товар</a></li>
+					<li><a href="{% url 's_kem' %}">С кем мы сотрудничаем</a></li>
+					<li><a href="{% url 'o_nas' %}">О нашем проекте</a></li>
+					<li><a href="{% url 'login' %}">Работник</a></li>
+					<li><a href="">Поддержка</a></li>
+				</ul>
+			<!-- /.navbar-menu -->
+				<a href="" class="callback">Мои заказы</a>
+			</div>
+		</div>
+	</nav>
+	<!-- СОДЕРЖИМОЕ САЙТА -->
+
+	<p>Спасибо за заказ! Ваш трек номер: {{ id }}</p><!--Вань подсасываешь через бекенд алгоритм с присваиванием трек номера, а также хронишь его. В словарем с этим ключем ты хронишь что заказывал, когда прийдет, за какую цену и т.д, думаю можешь сам дальше додумать-->
+	<p>Заказ прибудет: {{ date }}</p> <!--В завимости от числа, когда клиент совершил заказ ты ставишь примерную дату тоже с помощью рандома, эту информацию я думаю тебе хронить не надо -->
+</header>
+</body>
+</html>

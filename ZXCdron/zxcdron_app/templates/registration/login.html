@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone-delivery</title>
+
+    <!-- Bootstrap reboot (для сброса стилей) -->
+    <link rel="stylesheet" href="libs/bootstrap-reboot.min.css">
+
+    <!-- Bootstrap сетка -->
+    <link rel="stylesheet" href="libs/bootstrap-grid.min.css">
+
+    <!-- Шрифты с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="{% static 'css/rabotnik.css' %}">
+    <!--	<link rel="stylesheet" href="{% static 'css/test.css' %}">-->
+
+    <!-- Логотип вкладки -->
+    <link rel="icon" href="{% static 'img/test_logo1.jpg' %}" type="image/x-icon">
+<body>
+<header>
+    <!-- МЕНЮ САЙТА -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand"> Drone-Delivery </a>
+
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li><a href="{% url 'zakaz' %}">Заказать товар</a></li>
+                    <li><a href="{% url 's_kem' %}">С кем мы сотрудничаем</a></li>
+                    <li><a href="{% url 'o_nas' %}">О нашем проекте</a></li>
+                    <li><a href="{% url 'login' %}">Работник</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                </ul>
+                <!-- /.navbar-menu -->
+                <a href="#" class="callback">Мои заказы</a>
+            </div>
+        </div>
+    </nav>
+    <!-- СОДЕРЖИМОЕ САЙТА -->
+</header>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="address">Логин</label>
+    <input class="input" type="text" id="address" name="address" placeholder="">
+
+    <label for="fullName">Пароль</label>
+    <input class="input" type="text" id="fullName" name="fullName" placeholder="">
+
+    <button class='orange-button' type="submit" href="{% url 'control' %}">Вход</button>
+</form>
+
+</body>
+</html>
